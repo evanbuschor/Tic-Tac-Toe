@@ -2,16 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-// class based
-// class Square extends React.Component {
-// 	render() {
-// 		return (
-// 			<button className="square" onClick={this.props.onClick}>
-// 				{this.props.value}
-// 			</button>
-// 		);
-// 	}
-// }
+//TODO: add time travel to go back to specific moveset
 
 function Square(props) {
 	return (
