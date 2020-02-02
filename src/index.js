@@ -90,6 +90,20 @@ class Game extends React.Component {
 		const current = history[history.length - 1];
 		const winner = calculateWinner(current.squares);
 
+		const moveHistory = history.map((step, moveNumber) => {
+			const description = moveNumber
+				? "Go to move#: " + moveNumber
+				: "Go to game start";
+
+			return (
+				<li>
+					<button onClick={() => this.jumpTo(moveNumber)}>
+						{description}
+					</button>
+				</li>
+			);
+		});
+
 		let status;
 		if (winner) {
 			status = `Winner: ${winner}`;
@@ -107,7 +121,7 @@ class Game extends React.Component {
 				</div>
 				<div className="game-info">
 					<div>{status}</div>
-					<ol>{/* TODO */}</ol>
+					<ol>{moveHistory}</ol>
 				</div>
 			</div>
 		);
